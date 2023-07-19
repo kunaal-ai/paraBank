@@ -1,15 +1,14 @@
 from playwright.sync_api import Page, expect
 from pages.overview_page import OverviewPage
-from fixtures import *
+from fixtures.fixtures import *
 
-def test_account_services_menu(user_login, page: Page):
-    over_view_page = OverviewPage(page)
-    over_view_page.open_new_account_link.click()
-    over_view_page.accounts_overview_link.click()
-    over_view_page.transfer_funds_link.click()
-    over_view_page.bill_pay_link.click()
-    over_view_page.find_tranactions_link.click()
-    over_view_page.update_contact_info_link.click()
-    over_view_page.request_loan_link.click()
-    over_view_page.log_out_link.click()
-    
+
+def test_account_services_menu(user_login, payment_services_tab):
+    payment_services_tab.open_new_account_link.click()
+    payment_services_tab.accounts_overview_link.click()
+    payment_services_tab.transfer_funds_link.click()
+    payment_services_tab.bill_pay_link.click()
+    payment_services_tab.find_tranactions_link.click()
+    payment_services_tab.update_contact_info_link.click()
+    payment_services_tab.request_loan_link.click()
+    payment_services_tab.log_out_link.click()

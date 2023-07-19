@@ -2,7 +2,7 @@
 """
 from playwright.sync_api import Page, expect
 from pages.home_page import HomePage
-from fixtures import *
+from fixtures.fixtures import *
 
 
 def test_user_log_in_sucessfully(home_page, page: Page):
