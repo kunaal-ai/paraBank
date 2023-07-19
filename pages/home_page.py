@@ -7,11 +7,10 @@ class HomePage:
     """Page objects and methods Home Page only"""
 
     def __init__(self, page: Page) -> None:
+
         self.page = page
-        self.user_name_text = page.locator(
-            "div.login:nth-child(2) > input:nth-child(1)"
-        )
-        self.password_text = page.locator("div.login:nth-child(4) > input:nth-child(1)")
+        self.user_name_text = page.locator("input[name=\"username\"]")
+        self.password_text = page.locator("input[name=\"password\"]")
         self.log_in_button = page.locator("input.button")
         self.forget_login_button = page.locator(
             "#loginPanel > p:nth-child(2) > a:nth-child(1)"
