@@ -1,8 +1,11 @@
+''' pass
+'''
+import pytest
 from playwright.sync_api import Page
 from pages.home_page import HomePage
 from pages.bill_pay import BillPay
 from pages.helper_pom.payment_services_tab import PaymentServicesTab
-import pytest
+
 
 
 @pytest.fixture
@@ -17,6 +20,7 @@ def user_login(page: Page):
     home_page = HomePage(page)
     home_page.load()
     home_page.user_log_in()
+    print("✅ User logged in using user_login fixture")
 
 
 @pytest.fixture

@@ -1,7 +1,12 @@
+""" Page objects for BillPay class
+"""
+
 from playwright.sync_api import Page
 
 
 class BillPay:
+    """_summary_
+    """
     def __init__(self, page: Page) -> None:
         self.page = page
         self.name_text = page.locator("input[name='payee.name']")
@@ -28,6 +33,19 @@ class BillPay:
         verify_acc_no,
         amount,
     ):
+        """Submit pay form
+
+        Args:
+            name (any): Expected string input in form
+            address (any): Expected string input in form
+            city (any): Expected string input in form
+            state (any): Expected string input in form
+            zip_code (any): Expected string input in form
+            phone_no (any): Expected string input in form
+            account_no (any): Expected string input in form
+            verify_acc_no (any): Expected string input in form
+            amount (any): Expected string input in form
+        """    
         self.name_text.fill(name)
         self.address_text.fill(address)
         self.city_text.fill(city)
