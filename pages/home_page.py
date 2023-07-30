@@ -1,5 +1,6 @@
 """Home Page 
 """
+import os
 from playwright.sync_api import Page
 
 
@@ -22,8 +23,12 @@ class HomePage:
 
     def user_log_in(self):
         """Fill credentials and login"""
-        self.user_name_text.fill("john")
-        self.password_text.fill("demo")
+  
+        username = os.environ.get("ui_USER1_USERNAME")
+        password = os.environ.get("ui_USER1_PASSWORD")
+        
+        self.user_name_text.fill(username)
+        self.password_text.fill(password)
         self.log_in_button.click()
 
     def forget_login(self):
