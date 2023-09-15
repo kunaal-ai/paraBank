@@ -1,11 +1,8 @@
 """Testing bill payment for submission.
 """
 
-from fixtures.fixtures import *
-
-
 def test_submit_form_with_correct_values(
-    user_login, payment_services_tab, bill_pay_page
+    home_page,payment_services_tab, bill_pay_page
 ):
     """Send valid inputs and submit form
 
@@ -14,6 +11,8 @@ def test_submit_form_with_correct_values(
         payment_services_tab (fixture): Instance of PaymentServicesTab class
         bill_pay_page (fixture): Instance of BillPay class
     """    
+    home_page.load()
+    home_page.user_log_in()
     payment_services_tab.bill_pay_link.click()
 
     bill_pay_page.submit_form(
