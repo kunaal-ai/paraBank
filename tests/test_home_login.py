@@ -2,6 +2,7 @@
 """
 from playwright.sync_api import Page, expect
 
+
 def test_user_log_in_sucessfully(home_page, page: Page):
     """Verify if user is landed on its page after entering correct credentials
 
