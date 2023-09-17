@@ -21,11 +21,14 @@ class HomePage:
         self.page.goto("/")
 
     def user_log_in(self):
-        username = os.environ.get("ui_USER1_USERNAME")
-        password = os.environ.get("ui_USER1_PASSWORD")
-        
-        self.user_name_text.fill(username)
-        self.password_text.fill(password)
+        try:
+            PASSWORD = os.environ['PASSWORD']
+        except KeyError:
+            import utils.secret_config
+            PASSWORD = utils.secret_config.PASSWORD
+
+        self.user_name_text.fill("john")
+        self.password_text.fill(PASSWORD)
         self.log_in_button.click()
 
     def forget_login(self):
