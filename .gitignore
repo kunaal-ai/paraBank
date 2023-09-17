@@ -1,2 +1,2 @@
 __pycache__
-/utils/secret_config.py
+*.env

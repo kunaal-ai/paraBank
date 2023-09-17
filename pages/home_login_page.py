@@ -21,14 +21,8 @@ class HomePage:
         self.page.goto("/")
 
     def user_log_in(self):
-        try:
-            PASSWORD = os.environ['PASSWORD']
-        except KeyError:
-            import utils.secret_config
-            PASSWORD = utils.secret_config.PASSWORD
-
         self.user_name_text.fill("john")
-        self.password_text.fill(PASSWORD)
+        self.password_text.fill(os.environ['PASSWORD'])
         self.log_in_button.click()
 
     def forget_login(self):
