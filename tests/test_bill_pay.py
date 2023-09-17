@@ -1,8 +1,9 @@
 """Testing bill payment for submission.
 """
 
+
 def test_submit_form_with_correct_values(
-    home_page,payment_services_tab, bill_pay_page
+    home_page, payment_services_tab, bill_pay_page
 ):
     """Send valid inputs and submit form
 
