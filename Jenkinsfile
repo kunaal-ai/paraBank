@@ -15,14 +15,14 @@ pipeline {
         }
         stage ('build') {
             steps {
-                
-                echo "Hello Devops Engineers"
+                echo "*******  BUILD  **********"
+                sh 'pip install -r requirements.txt'  
             }
         }
         stage ('test') {
             steps {
                 echo "*********  TEST  ***********"
-                sh 'pytest'
+                sh 'PASSWORD=demo python3 -m pytest tests'
             }
         }
     }
