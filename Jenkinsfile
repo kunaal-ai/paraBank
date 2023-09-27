@@ -6,14 +6,23 @@ pipeline {
     }
 
     stages {
+        stage ('checkout') {
+            steps {
+                echo "********   Checkout *********"
+                git branch: 'main', url: 'https://github.com/kunaal-ai/paraBank.git'
+                
+            }
+        }
         stage ('build') {
             steps {
+                
                 echo "Hello Devops Engineers"
             }
         }
         stage ('test') {
             steps {
-                echo "Hello Devops Engineers"
+                echo "*********  TEST  ***********"
+                sh 'pytest'
             }
         }
     }
