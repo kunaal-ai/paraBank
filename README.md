@@ -20,3 +20,6 @@
 ### Other tools and version
 - python 3.10.9
 - pytest 7.1.2
+
+### CI/CD
+Jenkins build gets triggered using webhook and proxy server via ngrok
