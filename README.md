@@ -22,4 +22,5 @@
 - pytest 7.1.2
 
 ### CI/CD
-Jenkins build gets triggered using webhook and proxy server via ngrok
+- Jenkins build gets triggered using webhook and proxy server via ngrok
+- cron job schedule is set to 60 minutes.
