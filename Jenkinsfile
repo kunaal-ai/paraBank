@@ -1,10 +1,8 @@
 pipeline {
     agent any
-
     triggers {
-        cron('H/15 * * * *')
+        cron('H/60 * * * *')
     }
-
     stages {
         stage ('checkout') {
             steps {
@@ -16,13 +14,18 @@ pipeline {
         stage ('build') {
             steps {
                 echo "*******  BUILD  **********"
-                sh 'pip install -r requirements.txt'  
+                sh 'pip3 install -r requirements.txt'  
             }
         }
         stage ('test') {
             steps {
                 echo "*********  TEST  ***********"
-                sh 'PASSWORD=demo python3 -m pytest tests'
+                
+                script {
+                    withCredentials([string(credentialsId: 'paraSoftUIPass', variable: 'PASSWORD')]) {
+                        sh "PASSWORD=$PASSWORD python3 -m pytest tests"
+                    }
+                }    
             }
         }
     }
