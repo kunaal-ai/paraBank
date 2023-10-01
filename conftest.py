@@ -28,3 +28,10 @@ def payment_services_tab(page: Page):
 @pytest.fixture
 def request_loan_page(page: Page):
     return RequestLoanPage(page)
+
+@pytest.fixture(scope="function")
+def user_login(page: Page):
+    hp = HomePage(page)
+    hp.load()
+    hp.user_log_in()
+    yield
