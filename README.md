@@ -1,6 +1,35 @@
 # paraBank
 [Parabank](https://parabank.parasoft.com/parabank/index.htm) is fully banking site. Which is being used by QA engineers to explore testing tools. This repo is development of testing framework from scratch using Python, Pytest and Playwright. Utilizing Page object models, fixtures, html reports, and running on gihub workflow. User credentials are security saved in github secrets and using plugin dotenv, to toggle password when running on cloud or local machine. 
 
+### Structure 
+```
+.github
+   |-- workflows
+   |   |-- python-app.yml
+.gitignore
+.vscode
+   |-- settings.json
+Jenkinsfile
+README.md
+conftest.py
+pages
+   |-- __init__.py
+   |-- bill_pay_page.py
+   |-- helper_pom
+       |-- payment_services_tab.py
+   |-- home_login_page.py
+   |-- overview_page.py
+   |-- request_loan_page.py
+pytest.ini
+requirements.txt
+tests
+   |-- __init__.py
+   |-- test_bill_pay.py
+   |-- test_home_login.py
+   |-- test_overview.py
+   |-- test_request_loan.py
+```
+
 # How to run test
 - ```pytest``` - runs the tests and report will be saved in results dir.
 - ```pytest --headed``` - runs tests in headed mode.
